@@ -15,7 +15,26 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  
+  #check if array is empty
+  if arr.empty?
+    return 0
+  end
+  
+  #check if array has only one element
+  if arr.length == 1
+    return arr[0]
+  end
+  
+  #when array has >= 2 elements return sum of two largest elements
+  arr = arr.sort #sort the array
+  
+  result = arr.pop #pop the last element
+  
+  result += arr.pop #pop the last element again to get 2nd largest
+  
+  return result
+  
 end
 
 def sum_to_n? arr, n
