@@ -3,7 +3,6 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
   result = 0
   
   for num in arr
@@ -38,7 +37,33 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  #check if array is empty or of length 1
+  if arr.length < 2
+    return false
+  end
+  
+  arr = arr.sort
+  
+  head = 0
+  tail = arr.length - 1
+  
+  while head < tail
+    sum = arr[head] + arr[tail]
+    
+    if (sum == n)
+      return true
+    end 
+    
+    if (sum < n)
+      head += 1
+    else 
+      tail -= 1
+    end 
+    
+  end 
+  
+  return false
+  
 end
 
 # Part 2
