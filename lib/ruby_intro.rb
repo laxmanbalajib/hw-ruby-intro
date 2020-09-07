@@ -69,15 +69,39 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, "+ name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  
+  if (s.match?(/[^a-zA-Z]/) || s.length == 0)
+    return false
+  end
+  
+  regexVal = /\A[^aeiouAEIOU]/i  #regex for consonants
+  
+  return s.match?(regexVal)
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  
+  #reject invalid binary numbers
+  if (s.match?(/[^01]/i) || s.length == 0)  
+    return false
+  end 
+  
+  binaryNumber = 0
+  
+  s.split("").each do |c|
+    binaryNumber += (c == "1") ? 1 : 0
+    binaryNumber *= 2
+  end
+  
+  if (binaryNumber % 4 == 0) 
+    return true
+  end 
+  
+  return false
 end
 
 # Part 3
