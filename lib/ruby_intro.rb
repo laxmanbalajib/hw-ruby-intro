@@ -107,5 +107,30 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  
+  def initialize(isbn, price) 
+    @isbn = isbn
+    @price = price
+  end
+  
+  #setter method for isbn
+  def isbn=(isbn)
+    @isbn = isbn
+  end
+
+  #setter method for price
+  def price=(price)
+    @price = price
+  end
+  
+  #getter method for isbn
+  def isbn
+    @isbn
+  end
+  
+  #getter method for price
+  def price
+    @price
+  end
+
 end
