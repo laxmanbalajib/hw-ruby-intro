@@ -148,5 +148,9 @@ class BookInStock
   def price
     @price
   end
-
+  
+  def price_as_string
+    priceToDisplay ="%.2f" %  @price
+    return "$"+priceToDisplay
+  end
 end
