@@ -108,18 +108,34 @@ end
 
 class BookInStock
   
-  def initialize(isbn, price) 
+  def initialize(isbn, price)
+    if (isbn == nil || isbn.size == 0)
+      raise ArgumentError, 'isbn is invalid'
+    end
+    
+    if (price == nil || price <= 0)
+      raise ArgumentError, 'price is invalid'
+    end
+    
     @isbn = isbn
     @price = price
   end
   
   #setter method for isbn
   def isbn=(isbn)
+    if (isbn == nil || isbn.size == 0)
+      raise ArgumentError, 'isbn is invalid'
+    end
+    
     @isbn = isbn
   end
 
   #setter method for price
   def price=(price)
+    if (price == nil || price <= 0)
+      raise ArgumentError, 'price is invalid'
+    end
+    
     @price = price
   end
   
