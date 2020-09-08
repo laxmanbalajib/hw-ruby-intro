@@ -74,11 +74,13 @@ end
 
 def starts_with_consonant? s
   
+  #check if given string is empty or non-letter
   if (s.match?(/[^a-zA-Z]/) || s.length == 0)
     return false
   end
   
-  regexVal = /\A[^aeiouAEIOU]/i  #regex for consonants
+  #define regex for consonants
+  regexVal = /\A[^aeiouAEIOU]/i  
   
   return s.match?(regexVal)
 end
@@ -90,14 +92,16 @@ def binary_multiple_of_4? s
     return false
   end 
   
-  binaryNumber = 0
+  decimalRepresentation = 0
   
+  #convert binary number to decimal number
   s.split("").each do |c|
-    binaryNumber += (c == "1") ? 1 : 0
-    binaryNumber *= 2
+    decimalRepresentation += (c == "1") ? 1 : 0
+    decimalRepresentation *= 2
   end
   
-  if (binaryNumber % 4 == 0) 
+  #check if given number is divisible by 4
+  if (decimalRepresentation % 4 == 0) 
     return true
   end 
   
@@ -108,6 +112,7 @@ end
 
 class BookInStock
   
+  #constructor
   def initialize(isbn, price)
     if (isbn == nil || isbn.size == 0)
       raise ArgumentError, 'isbn is invalid'
